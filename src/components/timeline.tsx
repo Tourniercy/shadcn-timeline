@@ -1,5 +1,6 @@
 import * as React from "react";
 import { cn } from "@/lib/utils";
+import { Badge } from "@/components/ui/badge";
 
 const Timeline = React.forwardRef<
   HTMLDivElement,
@@ -15,7 +16,7 @@ const TimelineItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("relative pl-8 sm:pl-32 py-6 group", className)}
+    className={cn("relative pl-8 sm:pl-40 py-6 group", className)}
     {...props}
   />
 ));
@@ -28,7 +29,7 @@ const TimelineHeader = React.forwardRef<
   <div
     ref={ref}
     className={cn(
-      "flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[6.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-indigo-600 after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[6.5rem] after:-translate-x-1/2 after:translate-y-1.5",
+      "flex flex-col sm:flex-row items-start mb-1 group-last:before:hidden before:absolute before:left-2 sm:before:left-0 before:h-full before:px-px before:bg-slate-300 sm:before:ml-[8.5rem] before:self-start before:-translate-x-1/2 before:translate-y-3 after:absolute after:left-2 sm:after:left-0 after:w-2 after:h-2 after:bg-foreground after:border-4 after:box-content after:border-slate-50 after:rounded-full sm:after:ml-[8.5rem] after:-translate-x-1/2 after:translate-y-1.5",
       className,
     )}
     {...props}
@@ -36,30 +37,13 @@ const TimelineHeader = React.forwardRef<
 ));
 TimelineHeader.displayName = "TimelineHeader";
 
-const TimelineTime = React.forwardRef<
-  HTMLSpanElement,
-  React.HTMLAttributes<HTMLSpanElement>
->(({ className, children, ...props }, ref) => (
-  <span
-    ref={ref}
-    className={cn(
-      "sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-20 h-6 mb-3 sm:mb-0 text-emerald-600 bg-emerald-100 rounded-full",
-      className,
-    )}
-    {...props}
-  >
-    {children}
-  </span>
-));
-TimelineTime.displayName = "TimelineTime";
-
 const TimelineTitle = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, children, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn("text-xl font-bold text-slate-900", className)}
+    className={cn("text-xl font-bold text-primary", className)}
     {...props}
   >
     {children}
@@ -67,11 +51,34 @@ const TimelineTitle = React.forwardRef<
 ));
 TimelineTitle.displayName = "TimelineTitle";
 
+const TimelineTime = React.forwardRef<
+  HTMLDivElement,
+  React.ComponentProps<typeof Badge>
+>(({ className, variant = "default", ...props }) => {
+  return (
+    <Badge
+      className={cn(
+        "sm:absolute left-0 translate-y-0.5 inline-flex items-center justify-center text-xs font-semibold uppercase w-28 h-6 mb-3 sm:mb-0",
+        className,
+      )}
+      variant={variant}
+      {...props}
+    >
+      {props.children}
+    </Badge>
+  );
+});
+TimelineTime.displayName = "TimelineTime";
+
 const TimelineDescription = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
 >(({ className, ...props }, ref) => (
-  <div ref={ref} className={cn("text-slate-500", className)} {...props} />
+  <div
+    ref={ref}
+    className={cn("text-muted-foreground", className)}
+    {...props}
+  />
 ));
 TimelineDescription.displayName = "TimelineDescription";
 

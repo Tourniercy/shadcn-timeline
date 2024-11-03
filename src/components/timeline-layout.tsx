@@ -5,29 +5,41 @@ import {
   TimelineDescription,
   TimelineTime,
   TimelineHeader,
-} from "@/components/timeline-new-tailwind";
+} from "@/components/timeline";
+
+import { TimelineItemType } from "@/types";
+
+const timelineData: TimelineItemType[] = [
+  {
+    id: 1,
+    title: "Vercel was founded in SF, Italy",
+    description:
+      "Vercel Inc., formerly ZEIT, is an American cloud platform as a service company. The company maintains the Next.js web development framework.",
+    time: "May, 2020",
+  },
+  {
+    id: 2,
+    title: "Shadcn First Commit",
+    description:
+      "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
+    time: "January, 2023",
+  },
+];
 
 export const TimelineLayout = () => {
   return (
     <>
       <div>
         <Timeline>
-          <TimelineItem>
-            <TimelineHeader>
-              <TimelineTime>Test</TimelineTime>
-              <TimelineTitle>123345</TimelineTitle>
-            </TimelineHeader>
-            <TimelineDescription>123345</TimelineDescription>
-          </TimelineItem>
-        </Timeline>
-        <Timeline>
-          <TimelineItem>
-            <TimelineHeader>
-              <TimelineTime>Test</TimelineTime>
-              <TimelineTitle>123345</TimelineTitle>
-            </TimelineHeader>
-            <TimelineDescription>123345</TimelineDescription>
-          </TimelineItem>
+          {timelineData.map((item) => (
+            <TimelineItem key={item.id}>
+              <TimelineHeader>
+                <TimelineTime>{item.time}</TimelineTime>
+                <TimelineTitle>{item.title}</TimelineTitle>
+              </TimelineHeader>
+              <TimelineDescription>{item.description}</TimelineDescription>
+            </TimelineItem>
+          ))}
         </Timeline>
       </div>
     </>
