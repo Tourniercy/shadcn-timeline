@@ -28,20 +28,16 @@ const timelineData: TimelineItemType[] = [
 
 export const TimelineLayout = () => {
   return (
-    <>
-      <div>
-        <Timeline>
-          {timelineData.map((item) => (
-            <TimelineItem key={item.id}>
-              <TimelineHeader>
-                <TimelineTime>{item.time}</TimelineTime>
-                <TimelineTitle>{item.title}</TimelineTitle>
-              </TimelineHeader>
-              <TimelineDescription>{item.description}</TimelineDescription>
-            </TimelineItem>
-          ))}
-        </Timeline>
-      </div>
-    </>
+    <Timeline>
+      {timelineData.map((item) => (
+        <TimelineItem key={item.id}>
+          <TimelineHeader>
+            <TimelineTime>{item.time}</TimelineTime>
+            <TimelineTitle>{item.title}</TimelineTitle>
+          </TimelineHeader>
+          <TimelineDescription>{item.description}</TimelineDescription>
+        </TimelineItem>
+      ))}
+    </Timeline>
   );
 };
