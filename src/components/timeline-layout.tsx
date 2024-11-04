@@ -24,6 +24,12 @@ const timelineData: TimelineItemType[] = [
       "Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.",
     time: "January, 2023",
   },
+  {
+    id: 3,
+    title: "Shadcn Timeline",
+    description: "Shadcn timeline component. Open Source.",
+    time: "November, 2024",
+  },
 ];
 
 export const TimelineLayout = () => {
