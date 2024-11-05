@@ -51,10 +51,11 @@ const TimelineTitle = React.forwardRef<
 ));
 TimelineTitle.displayName = 'TimelineTitle';
 
-const TimelineTime = React.forwardRef<
-  HTMLDivElement,
-  React.ComponentProps<typeof Badge>
->(({ className, variant = 'default', ...props }) => {
+const TimelineTime = ({
+  className,
+  variant = 'default',
+  ...props
+}: React.ComponentProps<typeof Badge>) => {
   return (
     <Badge
       className={cn(
@@ -67,7 +68,7 @@ const TimelineTime = React.forwardRef<
       {props.children}
     </Badge>
   );
-});
+};
 TimelineTime.displayName = 'TimelineTime';
 
 const TimelineDescription = React.forwardRef<
