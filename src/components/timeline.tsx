@@ -16,7 +16,7 @@ const TimelineItem = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
-    className={cn('group relative py-6 pl-8 sm:pl-44', className)}
+    className={cn('group relative pb-8 pl-8 sm:pl-44', className)}
     {...props}
   />
 ));
