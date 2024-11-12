@@ -34,9 +34,6 @@ export const metadata: Metadata = {
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
-  icons: {
-    icon: "/icon.png",
-  },
   manifest: `${siteConfig.url}/site.webmanifest`,
 };
 
