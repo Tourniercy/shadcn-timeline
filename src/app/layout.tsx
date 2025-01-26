@@ -16,19 +16,16 @@ export const metadata: Metadata = {
   keywords: [
     "nextjs",
     "react",
-    "react server components",
-    "table",
-    "react-table",
-    "tanstack-table",
-    "shadcn-table",
+    "shadcn",
+    "timeline"
   ],
   authors: [
     {
-      name: "sadmann7",
-      url: "https://www.sadmn.com",
+      name: "tourniercy",
+      url: "https://github.com/Tourniercy",
     },
   ],
-  creator: "sadmann7",
+  creator: "tourniercy",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -36,16 +33,6 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.name,
-    description: siteConfig.description,
-    images: [`${siteConfig.url}/og.jpg`],
-    creator: "@sadmann17",
-  },
-  icons: {
-    icon: "/icon.png",
   },
   manifest: `${siteConfig.url}/site.webmanifest`,
 };
