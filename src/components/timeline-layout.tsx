@@ -12,7 +12,7 @@ import { TimelineItemType } from '@/types';
 const timelineData: TimelineItemType[] = [
   {
     id: 1,
-    title: 'Vercel was founded in SF, Italy',
+    title: 'Vercel was founded in SF, USA',
     description:
       'Vercel Inc., formerly ZEIT, is an American cloud platform as a service company. The company maintains the Next.js web development framework.',
     time: 'May, 2020',
