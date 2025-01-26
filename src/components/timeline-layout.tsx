@@ -41,7 +41,9 @@ export const TimelineLayout = () => {
             <TimelineTime>{item.time}</TimelineTime>
             <TimelineTitle>{item.title}</TimelineTitle>
           </TimelineHeader>
-          <TimelineDescription>{item.description}</TimelineDescription>
+          {item.description && (
+            <TimelineDescription>{item.description}</TimelineDescription>
+          )}
         </TimelineItem>
       ))}
     </Timeline>
